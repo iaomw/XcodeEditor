@@ -89,10 +89,14 @@
 */
 - (NSArray<XCSourceFile*>*)xibFiles;
 
+- (NSArray<XCSourceFile*>*)imageFiles;
 - (NSArray<XCSourceFile*>*)imagePNGFiles;
+- (NSArray<XCSourceFile*>*)imageJPEGFiles;
+- (NSArray<XCSourceFile*>*)imageTIFFFiles;
 
 - (NSString*)filePath;
 
+- (NSArray *)projectFilesOfType:(XcodeSourceFileType)projectFileType;
 
 //-------------------------------------------------------------------------------------------
 #pragma mark Groups

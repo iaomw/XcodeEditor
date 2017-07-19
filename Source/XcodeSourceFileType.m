@@ -42,7 +42,10 @@ static NSDictionary* NSDictionaryWithXCFileReferenceTypes()
             @"net.daringfireball.markdown" : @(Markdown),
             @"text.plist.xml"        : @(XMLPropertyList),
             @"file.storyboard"       : @(Storyboard),
-            @"text.xcconfig"         : @(XCConfig)
+            @"text.xcconfig"         : @(XCConfig),
+            @"image.jpeg"            : @(ImageResourceJPEG),
+            @"image.tiff"            : @(ImageResourceTIFF)
+
         };
     });
 

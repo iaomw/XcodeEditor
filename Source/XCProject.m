@@ -131,11 +131,32 @@ NSString *const XCProjectNotFoundException;
     return [self projectFilesOfType:XibFile];
 }
 
+- (NSArray *)imageFiles {
+
+    NSSet*  imageTypes = [NSSet setWithObjects:@(ImageResourcePNG),@(ImageResourceJPEG), @(ImageResourceTIFF), nil];
+    NSMutableArray *results = [NSMutableArray array];
+    for (XCSourceFile *file in [self files]) {
+        if ([imageTypes containsObject:@([file type])]) {
+            [results addObject:file];
+        }
+    }
+    return results;
+}
+
 - (NSArray *)imagePNGFiles
 {
     return [self projectFilesOfType:ImageResourcePNG];
 }
 
+- (NSArray *)imageJPEGFiles
+{
+    return [self projectFilesOfType:ImageResourceJPEG];
+}
+
+- (NSArray *)imageTIFFFiles
+{
+    return [self projectFilesOfType:ImageResourceTIFF];
+}
 
 // need this value to construct relative path in XcodeprojDefinition
 - (NSString *)filePath
